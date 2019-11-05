@@ -1,0 +1,12 @@
+# version 0.1
+FROM ubuntu:14.04
+MAINTAINER Kyrre Begnum "kyrre.begnum@hioa.no"
+RUN apt-get update
+RUN apt-get -y install apache2
+ADD index.html /var/www/html/index.htm
+
+CMD /usr/sbin/apache2ctl -D FOREGROUND
+
+#RUN echo "Hello world from tets server" > /var/www/html/index.html
+EXPOSE 80
+
